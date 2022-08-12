@@ -1,5 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "./App.css";
+import { SearchResult } from "./SearchResult";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -7,5 +8,9 @@ const client = new ApolloClient({
 });
 
 export const App = (): JSX.Element => {
-  return <ApolloProvider client={client}>empty</ApolloProvider>;
+  return (
+    <ApolloProvider client={client}>
+      <SearchResult />
+    </ApolloProvider>
+  );
 };
